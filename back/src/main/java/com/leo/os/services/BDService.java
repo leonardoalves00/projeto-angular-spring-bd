@@ -29,6 +29,7 @@ public class BDService {
 	
 	public void instanciaDB() {
 		Tecnico t1 = new Tecnico(null, "leonardo alves", "61433158337", "(85)989969896");
+		Tecnico t2 = new Tecnico(null, "xuxa", "61433158337", "(85)933333333");
 		Cliente c1 = new Cliente(null, "Maria do bairro", "264.002.750-61", "(85)933333333");
 		
 		OS os1 = new OS(null, Prioridade.ALTA, "teste OS", Status.ANDAMENTO, t1, c1);
@@ -36,7 +37,7 @@ public class BDService {
 		t1.getList().add(os1);
 		c1.getList().add(os1);
 		
-		tecnicoRepository.saveAll(Arrays.asList(t1));
+		tecnicoRepository.saveAll(Arrays.asList(t1, t2));
 		clienteRepository.saveAll(Arrays.asList(c1));
 		osRepository.saveAll(Arrays.asList(os1));
 	}
